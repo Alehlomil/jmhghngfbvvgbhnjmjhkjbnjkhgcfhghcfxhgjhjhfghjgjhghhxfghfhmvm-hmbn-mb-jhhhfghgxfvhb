@@ -120,3 +120,30 @@ footer { margin-top: 40px; border-top: 1px solid rgba(120,120,255,0.15); padding
     header h1 { font-size: 2rem; }
     .banner-content { flex-direction: column; align-items: flex-start; }
 }
+
+/* Tor bridges section */
+.bridges-intro { color: #d0d0ff; margin-bottom: 16px; line-height: 1.5; }
+.bridges b { color: #fff; }
+.bridge-methods { display: grid; gap: 12px; margin-bottom: 22px; }
+@media (min-width: 720px) { .bridge-methods { grid-template-columns: repeat(3, 1fr); } }
+.bridge-method {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px 16px; text-decoration: none;
+    background: rgba(30, 30, 60, 0.6);
+    border: 1px solid rgba(120, 120, 255, 0.18);
+    border-radius: 12px;
+    transition: border-color .15s ease, transform .1s ease, background .15s ease;
+}
+.bridge-method:hover { border-color: #4dccbd; transform: translateY(-2px); background: rgba(40, 40, 75, 0.7); }
+.bridge-method > i { color: #4dccbd; font-size: 1.35rem; margin-top: 2px; flex: 0 0 auto; }
+.bridge-method b { display: block; color: #fff; margin-bottom: 4px; }
+.bridge-method span { color: #c0c0ee; font-size: 0.88rem; line-height: 1.45; }
+.bridges-sub { color: #4dccbd; margin: 6px 0 12px; }
+.bridges-note { color: #b0b0ff; font-size: 0.86rem; margin-top: 14px; line-height: 1.5; }
+.bridges code, .bridges-note code {
+    font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(120, 120, 255, 0.15);
+    border-radius: 5px; padding: 1px 6px; font-size: 0.85em; color: #9fe;
+    white-space: nowrap;
+}

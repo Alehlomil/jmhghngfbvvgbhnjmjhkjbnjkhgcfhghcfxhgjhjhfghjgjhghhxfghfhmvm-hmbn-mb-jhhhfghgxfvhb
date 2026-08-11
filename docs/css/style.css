@@ -147,3 +147,32 @@ footer { margin-top: 40px; border-top: 1px solid rgba(120,120,255,0.15); padding
     border-radius: 5px; padding: 1px 6px; font-size: 0.85em; color: #9fe;
     white-space: nowrap;
 }
+
+/* LAN-sharing fix: multi-line command blocks + non-clickable info cards */
+.codeblock {
+    font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+    background: rgba(0, 0, 0, 0.42);
+    border: 1px solid rgba(120, 120, 255, 0.18);
+    border-radius: 10px;
+    padding: 12px 14px; margin: 10px 0 4px;
+    font-size: 0.84rem; line-height: 1.55; color: #9fe;
+    overflow-x: auto; white-space: pre;
+    -webkit-user-select: all; user-select: all;
+}
+/* Reuse the bridge-method card layout for plain (non-link) blocks. */
+.bridge-method.nolink { cursor: default; }
+.bridge-method.nolink:hover {
+    border-color: rgba(120, 120, 255, 0.18);
+    transform: none;
+    background: rgba(30, 30, 60, 0.6);
+}
+.lanfix h4 { margin-top: 22px; }
+/* .bridge-method b is display:block for the card title; bold used INSIDE the
+   body text must stay inline or every emphasis breaks onto its own line. */
+.bridge-method span b { display: inline; margin-bottom: 0; }
+/* On a phone a horizontally-scrolling command block hides the tail of the line
+   and most people never notice the scrollbar. Wrap instead — the text itself is
+   unchanged, so select-all + copy still yields a valid command. */
+@media (max-width: 640px) {
+    .codeblock { white-space: pre-wrap; overflow-wrap: break-word; }
+}
